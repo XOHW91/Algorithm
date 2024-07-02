@@ -1,8 +1,8 @@
-import Level_01.Practice_01;
+import String.Practice_02;
 
 public class Main {
     public static void main(String[] args) {
-        Practice_01 practice01 = new Practice_01();
-        practice01.run();
+        Practice_02 practice = new Practice_02();
+        practice.run();
     }
 }
