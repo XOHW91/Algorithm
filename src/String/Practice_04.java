@@ -2,24 +2,13 @@ package String;
 
 import java.util.Scanner;
 
-public class Practice_03 {
+public class Practice_04 {
     public void run() {
         /*
         문제 )
-            대문자와 소문자가 같이 존재하는 문자열을 입력받아 대문자는 소문자로 소문자는 대문자로 변환하여 출력하는 프로그램을 작성하세요.
+            N개의 단어가 주어지면 각 단어를 뒤집어 출력하는 프로그램을 작성하세요.
+            첫 줄에 자연수 N(3<=N<=20)이 주어집니다.
+            두 번째 줄부터 N개의 단어가 각 줄에 하나씩 주어집니다. 단어는 영어 알파벳으로만 구성되어 있습니다.
          */
-        Scanner sc = new Scanner(System.in);
-        String s = sc.next();
-        String result = "";
-        for (int i = 0; i < s.length(); i++ ){
-            char c = s.charAt(i); // String을 toCharArray를 이용하여 String배열을 생성 후 char에 넣어줘도 됨
-//            if (64 < c && c < 90) { // 65와 90 사이면 대문자 97-122:소문자
-            if (Character.isUpperCase(c)) {
-                result += Character.toLowerCase(c);
-            } else {
-                result += Character.toUpperCase(c);
-            }
-        }
-        System.out.println(result);
     }
 }
