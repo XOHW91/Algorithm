@@ -1,8 +1,8 @@
-import String.Practice_02;
+import String.Practice_05;
 
 public class Main {
     public static void main(String[] args) {
-        Practice_02 practice = new Practice_02();
+        Practice_05 practice = new Practice_05();
         practice.run();
     }
 }
