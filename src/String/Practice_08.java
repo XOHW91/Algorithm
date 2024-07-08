@@ -19,7 +19,7 @@ public class Practice_08 {
         Scanner sc = new Scanner(System.in);
 
         String str = sc.nextLine().replaceAll("[^a-zA-Z]", "");
-        String reverse = str.replaceAll("[^a-zA-Z]", "");
+        String reverse = new StringBuilder(str).reverse().toString();
         String result = "YES";
         if (!str.equalsIgnoreCase(reverse)) {
             result = "NO";
