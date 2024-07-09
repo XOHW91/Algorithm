@@ -1,8 +1,11 @@
-import String.Practice_11;
+import String.Practice_12;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Practice_11 practice = new Practice_11();
+        Scanner sc = new Scanner(System.in);
+
+        Practice_12 practice = new Practice_12();
         practice.run();
     }
 }
