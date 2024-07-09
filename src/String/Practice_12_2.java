@@ -2,7 +2,7 @@ package String;
 
 import java.util.Scanner;
 
-public class Practice_12 {
+public class Practice_12_2 {
     /*
         문제 )
             현수는 영희에게 알파벳 대문자로 구성된 비밀편지를 매일 컴퓨터를 이용해 보냅니다.
@@ -34,41 +34,20 @@ public class Practice_12 {
             Scanner sc = new Scanner(System.in);
             int t = sc.nextInt();
             String str = sc.next();
+            
             // replace를 이용해서 #은 1 , *은 0으로 변환한다.
-            str = str.replace('#', '1');
-            str = str.replace('*', '0');
+            str = str.replace('#', '1').replace('*', '0');
 
-            // 문자를 7개씩 잘라서 배열에 담는다.
-            String[] s = new String[t];
-            int start = 0, end = 7;
-            for (int i = 0; i < str.length(); i += 7) {
-//                String substring = str.substring(i, Math.min(i + 7, str.length()));
-                String substring = str.substring(start, end);
-                // substring(begin, end) 는 begin번째 인덱스부터 end 직전의 인덱스까지 자르겠다는 뜻으로 end번 째는 제외함.
-                // i를 활용해서 알고리즘을 잘 찾아봐야 함.
-                // Math.min은 문자열의 길이를 넘지 않도록 하는 것.
-                // 물론 start, end를 사용한 방법도 가능함.
-                s[i/7] = substring;
-                start = end;
-                end += 7;
+            // 문자를 7개씩 자른다.
+            String result = "";
+            for (int i = 0; i < t; i += 7) {
+                String temp = str.substring(0,7);
+                int num = Integer.parseInt(temp, 2);
+                result += (char) num;
+                str = str.substring(7);
             }
 
-            // 자른 문자들을 10진수로 변환한다.
-            double[] result = new double[t];
-            for (int i = 0; i < s.length; i++) {
-                int count = 6; // 인덱스 번호 유의해야함. 0부터 시작하기에 마지막 지수는 6임.
-                for (int j = 0; j < s[i].length(); j++) {
-                    int b =  Integer.parseInt(String.valueOf(s[i].charAt(j)));
-                    result[i] += (Math.pow(2, count) * b); //
-                    count--;
-                }
-            }
-
-            // 변환한 문자들을 char에 담아 출력
-            for (double b : result) {
-                char c = (char) b;
-                System.out.print(c);
-            }
+            System.out.println(result);
 
         }
 }
